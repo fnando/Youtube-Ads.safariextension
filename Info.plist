@@ -44,9 +44,13 @@
 	<dict>
 		<key>Scripts</key>
 		<dict>
-			<key>Start</key>
+			<key>End</key>
 			<array>
 				<string>inject.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string></string>
 			</array>
 		</dict>
 	</dict>
