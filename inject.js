@@ -3,8 +3,7 @@
     return;
   }
 
-  if (!video) {
-    setTimeout(YoutubeAdsExtension, 100);
+  if (location.hostname !== 'www.youtube.com') {
     return;
   }
 
@@ -14,7 +13,10 @@
 
   function skipYoutubeAds() {
     var video = getVideo();
-    video.currentTime = video.duration;
+
+    if (video) {
+      video.currentTime = video.duration;
+    }
   }
 
   function autoSkipAds() {
@@ -40,7 +42,7 @@
   setInterval(function(){
     var video = getVideo();
 
-    if (video.currentTime > 0) {
+    if (video && video.currentTime > 0) {
       autoSkipAds();
     }
   }, 1000);
